@@ -85,7 +85,7 @@ const coursesLinks = [
 export const Footer: React.FC = () => {
 
   return (
-<footer className="flex overflow-hidden flex-col pt-5 pr-20 pb-60 pl-5 bg-zinc-800 max-md:px-5 max-md:pb-24">
+<footer className="flex overflow-hidden flex-col pt-5 pr-20 pb-60 pl-13 bg-zinc-800 max-md:px-5 max-md:pb-24">
 <div className="max-md:max-w-full">
 <div className="flex gap-5 max-md:flex-col">
 <FooterColumn title="About Samiksha" links={aboutLinks} />

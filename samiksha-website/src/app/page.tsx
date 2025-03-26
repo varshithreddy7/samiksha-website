@@ -1,27 +1,25 @@
-import Image from "next/image";
-import HeroSection from "../../components/ui/HeroSection";
-import TestimonialCarousel from "../../components/ui/Testimonials";
-import OurFounder from "../../components/ui/FounderSection";
-import { CourseGrid } from "../../components/ui/CourseGrid";
-import MissionVisionContainer from "../../components/ui/MissionAndVision";
-import TopRankers from "../../components/ui/TopRankers";
-import FounderSection from "../../components/ui/FounderSection";
-import FacultyPanel from "../../components/ui/FacultyPanel";
-import { ContactDetails } from "../../components/ui/ContactDetails";
-import ContactForm from "../../components/ui/ContactForm";
-import Container from "../../components/ui/Container";
+import HeroSection from "../../components/ui/landingPage/HeroSection";
+import TestimonialCarousel from "../../components/ui/landingPage/Testimonials";
+
+import {CourseCarousel} from "../../components/ui/landingPage/CourseGrid";
+import TopRankers from "../../components/ui/landingPage/TopRankers";
+import AboutFrame from "../../components/ui/landingPage/AboutFrame";
+import ExpertMentors from "../../components/ui/landingPage/ExpertMentors";
+import FaqSection from "../../components/ui/landingPage/FaqSection";
 
 export default function Home() {
   return (
     <div>
       <HeroSection/>
-      <Container/>
-      <MissionVisionContainer/>
-      <TopRankers/>
+      <AboutFrame/>
+      
+      <CourseCarousel/>
+      <ExpertMentors/>
       <TestimonialCarousel/>
-      <FounderSection/>
-      <FacultyPanel/>
-      <ContactForm/>
+    
+      <TopRankers/>
+    <FaqSection/>
+      
       
     </div>
   );
