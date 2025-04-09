@@ -1,7 +1,5 @@
 "use client";
 
-
-
 import { useEffect, useState, useRef } from "react";
 import { motion, AnimatePresence } from "framer-motion";
 
@@ -10,10 +8,7 @@ export default function HeroSection() {
   const [isAnimating, setIsAnimating] = useState<boolean>(false);
   const intervalRef = useRef<NodeJS.Timeout | null>(null);
 
-  const images: string[] = [
-    "/images/upsc-herosection.png",
-  
-  ];
+  const images: string[] = Array(5).fill("/images/upsc-herosection.png");
 
   useEffect(() => {
     const nextSlide = () => {
@@ -41,11 +36,11 @@ export default function HeroSection() {
             animate={{ x: "0%" }}
             exit={{ x: "-100%" }}
             transition={{ duration: 0.8, ease: "easeInOut" }}
-            className="absolute inset-0 w-full h-full"
+            className="absolute inset-0 w-full h-full overflow-hidden"
           >
             <img
               src={images[currentScreen]}
-              alt="Restaurant Scene"
+              alt="Hero Section"
               className="w-full h-full object-cover"
             />
             <div className="absolute inset-0 bg-gradient-to-t from-black/50 via-black/20 to-transparent"></div>
@@ -94,17 +89,15 @@ export default function HeroSection() {
               transition={{ duration: 1, delay: 0.8 }}
               className="space-x-4"
             >
-              <button className="bg-[#0F6CB4] text-white px-8 py-3 rounded-full font-semibold hover:bg-yellow-400 transition-colors">
+              <button className=" px-8 py-3 bg-[#0F6CB4] text-white rounded-[30px] font-medium text-lg transition-all duration-300 ease-in-out transform hover:bg-blue-580 hover:scale-105 hover:shadow-lg cursor-pointer">
                 Enroll Now 🡥
               </button>
-              <button className="bg-white border-2 border-white px-8 py-3 rounded-full font-semibold hover:bg-white hover:text-gray-900 transition-colors">
+              <button className="bg-white border-2 border-white px-8 py-3 rounded-full font-semibold hover:bg-white hover:text-gray-900 font-medium text-lg transition-all duration-300 ease-in-out transform hover:bg-blue-580 hover:scale-105 hover:shadow-lg cursor-pointer">
                 Courses 🡥
               </button>
             </motion.div>
           </motion.div>
-          
         </AnimatePresence>
-        
       </div>
 
       {/* Pagination Dots */}
@@ -119,8 +112,7 @@ export default function HeroSection() {
                 setTimeout(() => setIsAnimating(false), 800);
               }
             }}
-            className={`w-3 h-3 rounded-full transition-colors ${index === currentScreen ? "bg-yellow-500" : "bg-white/50"
-              }`}
+            className={`w-3 h-3 rounded-full transition-colors ${index === currentScreen ? "bg-[#0F6CB4]" : "bg-white/50"}`}
           ></button>
         ))}
       </div>
